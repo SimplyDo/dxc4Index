@@ -1,0 +1,72 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>dxc4 Chess API</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1.0, maximum-scale=1.0, width=device-width">
+    <link rel="stylesheet" href="css/main.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body ng-app="chessApp">
+    <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+    <div class="header center bg-mid-gray">
+      <h1 class="h4 header-subtitle light-gray border-bottom inline-block py1">dxc4.com</h1>
+      <p class="h1 header-title white mt1">Chess API</p>
+    </div>
+    
+          <p>The dxc4 Chess API allows you to traverse a game's history, apply new moves, and even invoke a chess engine to play. Among other things you can request a FEN string, a board object, the current player's available moves, the game's status and much more. See dxc4.com for an example application that utilizes many of these features.</p>
+
+    <div class="container">
+      <div class="clearfix mxn3">
+        <div class="col col-6 p3 typeset">
+          <h2 class="h3 center">Check out the demo</h2>
+          <p>The demo chess client utilizes most of the API to create a fully featured chess application without doing any of the heavy lifting. You can import and share games and even invoke the stock fish engine to make moves or to play against.</p>
+          <p>The source code is open.</p>
+          <a class="button button-blue-outline mb1">Try Demo Client</a>
+          <a class="button button mb1">View Source</a>
+        </div>
+        <div class="col col-6 py3 typeset">
+          <h2 class="h3 center mb2">Play with the API</h2>
+          <p>Use the live API docs to send requests to the API and examine the responses as they would be returned to your application. Great for testing, learning and exploring.</p>
+          <p>Requires no sign up, no keys, and no coding.</p>
+          <a class="button button-blue-outline mb1">View Live Docs</a>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.min.js"></script>
+    
+    <script>
+    // Include the UserVoice JavaScript SDK (only needed once on a page)
+    UserVoice=window.UserVoice||[];(function(){var uv=document.createElement('script');uv.type='text/javascript';uv.async=true;uv.src='//widget.uservoice.com/24oEv58YxGW9DZwh3xuCg.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(uv,s)})();
+
+    //
+    // UserVoice Javascript SDK developer documentation:
+    // https://www.uservoice.com/o/javascript-sdk
+    //
+
+    // Set colors
+    UserVoice.push(['set', {
+      accent_color: '#448dd6',
+      trigger_color: 'white',
+      trigger_background_color: '#6aba2e'
+    }]);
+
+    // Add default trigger to the bottom-right corner of the window:
+    UserVoice.push(['addTrigger', { mode: 'smartvote', trigger_position: 'bottom-right' }]);
+
+    // Autoprompt for Satisfaction and SmartVote (only displayed under certain conditions)
+    UserVoice.push(['autoprompt', {}]);
+
+    </script>
+
+</body>
+</html>

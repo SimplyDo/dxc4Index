@@ -1,0 +1,27 @@
+@import "../bower_components/reset-scss/reset.scss";
+@import "../bower_components/basscss/css/basscss.css";
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size:15px;
+  color:#000;
+  font-weight:300;
+}
+
+.header {
+  padding:100px 0 80px 0;
+  font-weight: 400;
+}
+
+.header-subtitle {
+  font-weight: 100;
+}
+
+
+.typeset {
+  p {
+    margin:1em 0;
+    line-height:1.4em;
+  }
+}
