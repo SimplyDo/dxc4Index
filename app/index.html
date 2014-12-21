@@ -12,37 +12,174 @@
     <link rel="stylesheet" href="css/main.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-app="chessApp">
+  <body ng-app="chessApp" class="bg-lighter-gray">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <div class="header center bg-mid-gray">
-      <h1 class="h4 header-subtitle light-gray border-bottom inline-block py1">dxc4.com</h1>
-      <p class="h1 header-title white mt1">Chess API</p>
-    </div>
-    
-          <p>The dxc4 Chess API allows you to traverse a game's history, apply new moves, and even invoke a chess engine to play. Among other things you can request a FEN string, a board object, the current player's available moves, the game's status and much more. See dxc4.com for an example application that utilizes many of these features.</p>
+    <div class="header py3 bg-dark-gray">
+      <div class="wrapper mx-auto">
+        <h1 class="header-title yellow mb0 mt4">dxc4 chess API</h1>
+        <p class="h3 header-subtitle white">Designed to power chess applications</p>
 
-    <div class="container">
-      <div class="clearfix mxn3">
-        <div class="col col-6 p3 typeset">
-          <h2 class="h3 center">Check out the demo</h2>
-          <p>The demo chess client utilizes most of the API to create a fully featured chess application without doing any of the heavy lifting. You can import and share games and even invoke the stock fish engine to make moves or to play against.</p>
-          <p>The source code is open.</p>
-          <a class="button button-blue-outline mb1">Try Demo Client</a>
-          <a class="button button mb1">View Source</a>
-        </div>
-        <div class="col col-6 py3 typeset">
-          <h2 class="h3 center mb2">Play with the API</h2>
-          <p>Use the live API docs to send requests to the API and examine the responses as they would be returned to your application. Great for testing, learning and exploring.</p>
-          <p>Requires no sign up, no keys, and no coding.</p>
-          <a class="button button-blue-outline mb1">View Live Docs</a>
+        <div class="mt3 mb3">
+          <a target="new" href="http://demo.dxc4.com" class="button button-big button-blue mr1">Try demo app</a>
+          <a target="new" href="http://apidocs.dxc4.com/dxc4" class="button button-big button-blue">View live docs</a>
         </div>
       </div>
     </div>
+    
+    <div class="wrapper mx-auto">
+
+      <div class="mt3 mb3">
+        
+        <p class="h3 sm-col-10 md-col-8 mx-auto center mid-gray">Traverse a game's history, apply new moves, or invoke a chess engine to play. Request a FEN string, a board object, available moves, a game's status and <a href="#results">much more</a>.</p>
+      </div>
+      
+      <div class="bg-white py2 px3 border rounded mb3">
+        <div class="clearfix mxn2">
+          <div class="col md-col-6 px2 typeset">
+            <div class="mb3">
+              <h2 class="h2">Check out the demo app</h2>
+              <p>The demo chess app <span class="border-bottom">utilizes most of the API to create a fully featured chess application</span>. You can import and share games and even invoke the stock fish engine to make moves or to play against.</p>
+              <div class="mt2">
+                <a target="new" href="http://demo.dxc4.com" class="button button-blue-outline">Try demo app</a>
+                <a target="new" href="https://github.com/SimplyDo/chessAPP" class="button button">Source code</a>
+              </div>
+            </div>
+          </div>
+          <div class="col md-col-6 px2 typeset">
+            <div class="mb3">
+              <h2 class="h2">Explore the API</h2>
+              <p>Use the live API docs to send requests to the API and review real responses. <span class="border-bottom">Great for testing, learning and exploring.</span></p>
+              <div class="mt2">
+                <a target="new" href="http://apidocs.dxc4.com/dxc4" class="button button-blue-outline">View Live Docs</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="clearfix">
+        <div class="mb1">
+          <h2 class="h2 center">How it works</h2>
+          <div class="clearfix mxn1">
+            <div class="col sm-col-6 px1 typeset">
+              <p>Each request to the API should include a set of moves in <a href="http://en.wikipedia.org/wiki/Algebraic_notation_(chess)" target="new">algebraic notation</a>, starting from the initial board position. You can set the game's state to a specific move, apply a new move or have the stock fish chess engine make a move.</p>
+            </div>
+            <div class="col sm-col-6 px1 typeset">
+              <p>Once the moves are processed the API will return any requested information. Among other things you can use it to render a board, select and validate next moves, etc...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="clearfix mxn2 mb2">
+        <div class="col-12 px2 mb2">
+          <h3 class="h4">Send POST requests to: <span class="border-bottom">http://api.dxc4.com/pgnparser</span></h3>
+        </div>
+        <div class="col md-col-4 col-right px2 mid-gray">
+          <p>For now all the functionality lives in the PGN Parser. See table for optional parameters or better yet explore the <a target="new" href="http://apidocs.dxc4.com/dxc4">live docs</a> to interact with the API directly.</p>
+          <p><span class="inline-block bg-yellow normal px1">Please note:</span> The pgn parser requires POST requests to accommodate large sets of moves.</p>
+        </div>
+        <div class="col md-col-8 px2">
+          <table class="table-light bg-darken-1 border rounded">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>pgn</td>
+                <td>A <a href="http://en.wikipedia.org/wiki/Portable_Game_Notation" target="new">PGN compatible</a> moves string starting from the initial board position.<br />Example: 1. d4 d5 2. c4</td>
+              </tr>
+              <tr>
+                <td>moveCount</td>
+                <td>Optionally sets the game's state to an earlier move and discards any subsequent moves. Negative numbers will be offset from the last half move.<br />Example: -3</td>
+              </tr>
+              <tr>
+                <td>nextMove</td>
+                <td>A single legal move in <a href="http://en.wikipedia.org/wiki/Algebraic_notation_(chess)" target="new">algebraic notation</a> to be applied to the game.<br />Example: dxc4</td>
+              </tr>
+              <tr>
+                <td>stockfish</td>
+                <td>Experimental: If set to true the best next move will be determined by the stockfish chess engine and applied to the game.</td>
+              </tr>
+              <tr>
+                <td>includes</td>
+                <td>A set of items to be included in the response. Pass in one or more as a comma separated string. See the <a href="#results">full list below</a> or consult the <a target="new" href="http://apidocs.dxc4.com/dxc4">live docs</a> for example responses.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="clearfix mxn2 mb2">
+        <div class="col-12 px2 mb2">
+          <h3 id="results" class="h4">API Response</h3>
+        </div>
+        <div class="col md-col-4 col-right px2 mid-gray">
+          <p>You can request any or all of these via the includes parameter with your requests to the PGN Parser. To explore full responses please consult the <a target="new" href="http://apidocs.dxc4.com/dxc4">live docs</a>.</p>
+        </div>
+        <div class="col md-col-8 px2">
+          <table class="table-light bg-darken-1 border rounded">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>status</td>
+                <td>Returns true/false for: Checkmate, Check, Stalemate, Repetition</td>
+              </tr>
+              <tr>
+                <td>side</td>
+                <td>Which player's turn is it?</td>
+              </tr>
+              <tr>
+                <td>pgn</td>
+                <td>A <a href="http://en.wikipedia.org/wiki/Portable_Game_Notation" target="new">PGN compatible</a> moves string starting from the initial board position.</td>
+              </tr>
+              <tr>
+                <td>fen</td>
+                <td>Returns a <a href="http://en.wikipedia.org/wiki/Forsyth–Edwards_Notation" target="new">FEN string</a> for the current position. Please note: This currently only includes the actual position and who's turn it is.</td>
+              </tr>
+              <tr>
+                <td>valuation</td>
+                <td>A count of all the pieces on the board by type for each side and their <a href="http://en.wikipedia.org/wiki/Chess_piece_relative_value#Standard_valuations" target="new">standard valuation</a>.</td>
+              </tr>
+              <tr>
+                <td>previousMoves</td>
+                <td>An array of all moves in algebraic notation.</td>
+              </tr>
+              <tr>
+                <td>previousFullMoves</td>
+                <td>All moves with additional information about the squares and pieces involved.</td>
+              </tr>
+              <tr>
+                <td>availableMoves</td>
+                <td>An array of all possible legal moves for the current player in algebraic notation.</td>
+              </tr>
+              <tr>
+                <td>availableFullMoves</td>
+                <td>Any possible legal moves for the current player with additional information about the squares and pieces involved.</td>
+              </tr>
+              <tr>
+                <td>board</td>
+                <td>Returns an array of all the board's squares and pieces.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div>
 
     <script src="js/main.min.js"></script>
+    <script src="/bower_components/smooth-scroll/smooth-scroll.min.js"></script>
     
     <script>
     // Include the UserVoice JavaScript SDK (only needed once on a page)

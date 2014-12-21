@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "reset-scss": "*",
-    "basscss": "~4.1.6"
+    "basscss": "~4.1.6",
+    "smooth-scroll": "~1.0.1"
   }
 }
