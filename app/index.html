@@ -12,13 +12,13 @@
     <link rel="stylesheet" href="css/main.min.css">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300,400italic' rel='stylesheet' type='text/css'>
   </head>
-  <body ng-app="chessApp" class="bg-lighter-gray">
+  <body class="bg-lighter-gray">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
     <div class="header py3 bg-dark-gray">
-      <div class="wrapper mx-auto">
+      <div class="wrapper px2 mx-auto">
         <h1 class="header-title yellow mb0 mt4">dxc4 chess API</h1>
         <p class="h3 header-subtitle white">Designed to power chess applications</p>
 
@@ -29,7 +29,7 @@
       </div>
     </div>
     
-    <div class="wrapper mx-auto">
+    <div class="wrapper px2 mx-auto">
 
       <div class="mt3 mb3">
         
@@ -38,7 +38,7 @@
       
       <div class="bg-white py2 px3 border rounded mb3">
         <div class="clearfix mxn2">
-          <div class="col md-col-6 px2 typeset">
+          <div class="col md-col-6 px2 ">
             <div class="mb3">
               <h2 class="h2">Check out the demo app</h2>
               <p>The demo chess app <span class="border-bottom">utilizes most of the API to create a fully featured chess application</span>. You can import and share games and even invoke the stock fish engine to make moves or to play against.</p>
@@ -48,7 +48,7 @@
               </div>
             </div>
           </div>
-          <div class="col md-col-6 px2 typeset">
+          <div class="col md-col-6 px2 ">
             <div class="mb3">
               <h2 class="h2">Explore the API</h2>
               <p>Use the live API docs to send requests to the API and review real responses. <span class="border-bottom">Great for testing, learning and exploring.</span></p>
@@ -63,20 +63,20 @@
         <div class="mb1">
           <h2 class="h2 center">How it works</h2>
           <div class="clearfix mxn1">
-            <div class="col sm-col-6 px1 typeset">
+            <div class="col sm-col-6 px1 ">
               <p>Each request to the API should include a set of moves in <a href="http://en.wikipedia.org/wiki/Algebraic_notation_(chess)" target="new">algebraic notation</a>, starting from the initial board position. You can set the game's state to a specific move, apply a new move or have the stock fish chess engine make a move.</p>
             </div>
-            <div class="col sm-col-6 px1 typeset">
+            <div class="col sm-col-6 px1 ">
               <p>Once the moves are processed the API will return any requested information. Among other things you can use it to render a board, select and validate next moves, etc...</p>
             </div>
           </div>
         </div>
       </div>
     
+      <div class="clearfix">
+        <h3 class="h4 mb2">Send POST requests to: <span class="border-bottom">http://api.dxc4.com/pgnparser</span></h3>
+      </div>
       <div class="clearfix mxn2 mb2">
-        <div class="col-12 px2 mb2">
-          <h3 class="h4">Send POST requests to: <span class="border-bottom">http://api.dxc4.com/pgnparser</span></h3>
-        </div>
         <div class="col md-col-4 col-right px2 mid-gray">
           <p>For now all the functionality lives in the PGN Parser. See table for optional parameters or better yet explore the <a target="new" href="http://apidocs.dxc4.com/dxc4">live docs</a> to interact with the API directly.</p>
           <p><span class="inline-block bg-yellow normal px1">Please note:</span> The pgn parser requires POST requests to accommodate large sets of moves.</p>
@@ -115,10 +115,10 @@
         </div>
       </div>
 
+      <div class="clearfix">
+        <h3 id="results" class="h4 mb2 ">API Response</h3>
+      </div>
       <div class="clearfix mxn2 mb2">
-        <div class="col-12 px2 mb2">
-          <h3 id="results" class="h4">API Response</h3>
-        </div>
         <div class="col md-col-4 col-right px2 mid-gray">
           <p>You can request any or all of these via the includes parameter with your requests to the PGN Parser. To explore full responses please consult the <a target="new" href="http://apidocs.dxc4.com/dxc4">live docs</a>.</p>
         </div>
